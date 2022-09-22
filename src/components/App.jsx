@@ -1,16 +1,9 @@
+import Statistics from './feedback/Statistics';
+import s from './feedback/Section.module.css';
+
+
 export const App = () => {
-  return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
-  );
+  return <div className={s.statistics}>
+    <Statistics />
+  </div>;
 };
