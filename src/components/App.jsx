@@ -1,7 +1,8 @@
 import Statistics from './feedback/Statistics';
-import s from './feedback/Section.module.css';
+import s from './feedback/Statistics.module.css';
 
 
 export const App = () => {
-  return <Statistics className={s.statistics}/>
+  return <div className={s.statistics} ><Statistics /></div>
+  
 };
