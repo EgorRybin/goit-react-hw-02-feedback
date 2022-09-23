@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import s from './StatisticsValues.module.css'
 
 const StatisticsValues = ({ state, countPercentage, totalFidback }) => {
@@ -14,3 +16,9 @@ const StatisticsValues = ({ state, countPercentage, totalFidback }) => {
 };
 
 export default StatisticsValues;
+
+StatisticsValues.propTypes = {
+  totalFidback: PropTypes.func.isRequired,
+  state: PropTypes.object.isRequired,
+  countPercentage: PropTypes.func.isRequired,
+}
