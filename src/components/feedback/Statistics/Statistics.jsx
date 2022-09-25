@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import FeedbackOptions from './FeedbackOptions';
-import Notification from './Notification';
-import Sections from './Section';
-import StatisticsValues from './StatisticsValues';
+import FeedbackOptions from '../FeedbackOptions/FeedbackOptions';
+import Notification from '../Notification/Notification';
+import Sections from '../Sections/Section';
+import StatisticsValues from '../StatisticsValues/StatisticsValues';
 
 class Statistics extends Component {
   state = {
@@ -27,8 +27,8 @@ class Statistics extends Component {
   };
 
   countPositiveFeedbackPercentage = () => {
-    const { good, neutral, bad } = this.state;
-    return Math.floor((good / (good + neutral + bad)) * 100);
+    const { good } = this.state;
+    return Math.floor((good / this.totalFidback()) * 100);
   };
 
   noFeedbackMassage = () => {
@@ -36,9 +36,6 @@ class Statistics extends Component {
   };
 
   render() {
-    const { good, neutral, bad } = this.state;
-    const isActive = good + neutral + bad > 0;
-
     const { onLeaveFeedback, countPositiveFeedbackPercentage, totalFidback } =
       this;
 
@@ -49,7 +46,7 @@ class Statistics extends Component {
         </Sections>
 
         <Sections title="Statistics">
-          {isActive ? (
+          {totalFidback() > 0 ? (
             <StatisticsValues
               totalFidback={totalFidback}
               state={this.state}
@@ -65,8 +62,3 @@ class Statistics extends Component {
 }
 
 export default Statistics;
-
-
-
-
-

@@ -19,6 +19,10 @@ export default StatisticsValues;
 
 StatisticsValues.propTypes = {
   totalFidback: PropTypes.func.isRequired,
-  state: PropTypes.object.isRequired,
+  state: PropTypes.PropTypes.shape({
+    good: PropTypes.number,
+    neutral: PropTypes.number,
+    bad: PropTypes.number,
+  }),
   countPercentage: PropTypes.func.isRequired,
 }
