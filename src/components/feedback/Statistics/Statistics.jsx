@@ -45,7 +45,7 @@ class Statistics extends Component {
       <>
         <Sections title="Please leave feedback">
           <FeedbackOptions
-            otions={Object.keys(this.state)}
+            options={Object.keys(this.state)}
             onLeaveFeedback={onLeaveFeedback}
           />
         </Sections>
